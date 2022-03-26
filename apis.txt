@@ -1,0 +1,17 @@
+// post reliefCentre create
+http://localhost:8121/reliefCenter
+
+// get reliefCentre details
+http://localhost:8121/reliefCenter
+
+// post collectionCentre create
+http://localhost:8121/collectionCentre
+
+// get collectionCentre details
+http://localhost:8121/collectionCentre
+
+// post collectionCentre create
+http://localhost:8121/reliefItem
+
+// get collectionCentre details
+http://localhost:8121/reliefItem

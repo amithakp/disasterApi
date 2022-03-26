@@ -1,0 +1,16 @@
+[
+    {
+        "disaster_reliefCenterid":1,
+        "disaster_id":1,
+        "reliefCentername":"IHRD College,Thrissur",
+        "totalAccomodation":418,
+        "vaccancy":21
+    },
+    {
+        "disaster_reliefCenterid":2,
+        "disaster_id":1,
+        "reliefCentername":"Cochin University of Science and Technology,Kochi",
+        "totalAccomodation":418,
+        "vaccancy":21
+    }
+]
