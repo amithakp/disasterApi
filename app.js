@@ -36,6 +36,62 @@ app.get('/reliefCenter',(req,res) => {
     })
 })
  
+// update reliefCentre details
+app.put('/reliefCenter',(req,res) => {
+    // var id = Number(req.body.disaster_reliefCenterid);
+    db.collection('reliefCentre').updateOne(
+        // {id:disaster_reliefCenterid},
+            {
+                $set:{
+                    reliefCenterName:req.body.reliefCenterName,
+                    totalAccomodation:req.body.totalAccomodation,
+                    vaccancy:req.body.vaccancy
+                }
+            })
+    
+        res.send('Updated Successful')
+    })
+
+    // app.put('/reliefCenter/:id',(req,res) => {
+    //     var id = Number(req.params.id);
+    //     db.collection('reliefCentre').updateOne(
+    //         {id:id},
+    //             {
+    //                 $set:{
+    //                     reliefCenterName:req.body.reliefCenterName,
+    //                     totalAccomodation:req.body.totalAccomodation,
+    //                     vaccancy:req.body.vaccancy
+    //                 }
+    //             })
+        
+    //         res.send('Updated Successful')
+    //     })
+        
+        
+
+
+
+// app.put('/reliefCenter/:id',(req,res) => {
+//     var id = Number(req.body.disaster_reliefCenterid);
+//     db.collection('reliefCentre').updateOne(
+//         {id:id},
+//         {
+//             $set:{
+//                 "reliefCenterName":req.body.reliefCenterName,
+//                 "totalAccomodation":req.body.totalAccomodation,
+//                 "vaccancy":req.body.vaccancy,
+//             }
+//         }
+//     )
+//     res.send('data updated')
+// })
+// delete
+ app.delete('/deleteReliefCentre',(req,res)=>{
+    db.collection('reliefCentre').remove({},(err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
 // post collectionCentre create
 app.post('/collectionCentre',(req,res) => {
     console.log(req.body);
@@ -63,6 +119,54 @@ app.post('/reliefItem',(req,res) => {
 //get reliefItem details
 app.get('/reliefItem',(req,res) => {
     db.collection('reliefItem').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//get blogVolunteer details
+app.get('/blogVolunteer',(req,res) => {
+    db.collection('blogVolunteer').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+//get report
+app.get('/report',(req,res) => {
+    db.collection('report').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//admin section start
+//blog
+//get blogVolunteer details
+app.get('/blogAdmin',(req,res) => {
+    db.collection('blogAdmin').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//get blogVolunteer details
+app.get('/reliefCampaign',(req,res) => {
+    db.collection('reliefCampaign').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//get contact/helpline details
+app.get('/contact',(req,res) => {
+    db.collection('contact').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+//get news details
+app.get('/news',(req,res) => {
+    db.collection('news').find().toArray((err,result) => {
         if(err) throw err;
         res.send(result)
     })
