@@ -158,10 +158,18 @@ app.get('/reliefCampaign',(req,res) => {
 })
 
 //get contact/helpline details
-app.get('/contact',(req,res) => {
-    db.collection('contact').find().toArray((err,result) => {
+// app.get('/contact',(req,res) => {
+//     db.collection('contact').find().toArray((err,result) => {
+//         if(err) throw err;
+//         res.send(result)
+//     })
+// })
+//get contact/helpline details
+app.get('/contact/:id',(req,res) => {
+    var id = parseInt(req.params.id);
+    db.collection('contact').find({"contact_id":id}).toArray((err,result) =>{
         if(err) throw err;
-        res.send(result)
+        res.send(result) 
     })
 })
 //get news details
